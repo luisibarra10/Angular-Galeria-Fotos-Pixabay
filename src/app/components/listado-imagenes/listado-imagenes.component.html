@@ -1,0 +1,24 @@
+<div class="contenido">
+    <div  class="row row-cols-1 row-cols-md-4 g-4">
+        <div *ngFor="let imagen of listadoImagenes" class="col mb-2">
+          <div class="card mb-3">
+             <a [href]="imagen.largeImageURL" target="_blank" ><img [src]="imagen.previewURL"   class="card-img-top" alt="..."> </a> 
+            <!--<div class="card-body text-center">
+              <a [href]="imagen.largeImageURL" target="_blank" class="btn btn-danger">VER IMAGEN</a>
+            </div>-->
+            <!--<div class="card-footer text-muted text-center">
+                <div class="row">
+                    <div class="col">
+                        <p class="likesViews">Likes</p>
+                        <span class="badge badgedark">{{ imagen.likes }}</span>
+                    </div>
+                    <div class="col">
+                        <p class="likesViews">Views</p>
+                        <span class="badge badgelight">{{ imagen.views }}</span>
+                    </div>
+                </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+</div>
