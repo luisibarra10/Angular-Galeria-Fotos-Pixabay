@@ -2,7 +2,7 @@
     background: url('../../../assets/img/fondo4.jpg');
     background-position: center center;
 	background-size: cover;
-	height: 70vh;
+	height: 60vh;
 	min-height: 550px;
     position: relative;
 }
@@ -25,7 +25,9 @@
 h3{
     font-family: 'Roboto', sans-serif;
     font-weight: 800;
+    font-size: 37px;
 }
+
 
 .recomendacion{
     color: #ccc;
@@ -34,18 +36,151 @@ h3{
 p.info{
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
+    font-size: 20px;
 }
 
 p.recomendacion{
     color: #DFDBDB;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
+    font-size: 20px;
 }
 
 input:focus {
     color: black;
+        outline: none !important;
+        border-color: #719ECE;
+        box-shadow: 0 0 10px #719ECE;
   }
 
   .fa-search:hover{
     font-size: 20px;
   }
+
+
+  @media (max-width: 400px) {
+    .contenido{
+        padding-top: 40px;
+        padding-bottom: 100px;
+        text-align: center;
+        
+    }
+
+    
+
+    .fondo{
+        background: url('../../../assets/img/fondo4.jpg');
+        background-position: center center;
+        background-size: cover;
+        height: 60vh;
+        min-height: 580px;
+        position: relative;
+    }
+
+
+}
+
+@media only screen and (max-width: 500px) and (min-width: 400px) {
+    .contenido{
+        padding-top: 40px;
+        padding-bottom: 100px;
+        text-align: center;
+        
+    }
+
+    .fondo{
+        background: url('../../../assets/img/fondo4.jpg');
+        background-position: center center;
+        background-size: cover;
+        height: 60vh;
+        min-height: 580px;
+        position: relative;
+    }
+
+
+}
+
+@media only screen and (max-width: 500px) and (min-width: 376px) {
+    .contenido{
+        padding-top: 100px;
+        padding-bottom: 0px;
+        text-align: center;
+    }
+
+    p.info{
+      
+        font-size: 17px;
+    }
+    
+    p.recomendacion{
+       
+        font-size: 16px;
+    }
+
+    .barra{
+        font-size: 22px;
+    }
+
+    .error{
+        font-size: 17px;
+    }
+
+   
+
+    
+
+
+}
+
+@media only screen and (max-width: 376px) and (min-width: 260px)  {  
+    .contenido{
+        padding-top: 50px;
+        padding-bottom: 0px;
+        text-align: center;
+    }
+
+    p.info{
+      
+        font-size: 15px;
+    }
+    
+    p.recomendacion{
+       
+        font-size: 13px;
+    }
+
+    .barra{
+        font-size: 17px;
+    }
+
+    .error{
+        font-size: 14px;
+    }
+} 
+
+@media only screen and (max-width: 260px) and (min-width: 70px)  {  
+    .contenido{
+        padding-top: 50px;
+        padding-bottom: 0px;
+        text-align: center;
+    }
+
+    p.info{
+      
+        font-size: 12px;
+    }
+    
+    p.recomendacion{
+       
+        font-size: 11px;
+    }
+
+    .barra{
+        font-size: 14px;
+    }
+
+    .error{
+        font-size: 14px;
+    }
+} 
+

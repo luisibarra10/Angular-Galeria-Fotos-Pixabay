@@ -4,15 +4,15 @@
       <div class="container">
         <div class="contenido">
             <h3 class="mb-4">Imágenes increibles para descargar</h3>
-            <p class="mb-4 info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, dolorum quisquam aspernatur, necessitatibus dolore atque ullam inventore sed laboriosam animi enim, officia ipsa in reiciendis quaerat porro maxime. Cumque, eius?</p>
+            <p class="mb-4 info">Nuestro banco de imágenes tiene más de 1.9 millones de imágenes y videos compartidos por nuestra talentosa comunidad.</p>
             <div class="input-group input-group-lg mb-2">
                 <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-search"></i></span>
+                  <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-search barra"></i></span>
                 </div>
-                <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="Buscar Imágenes: Ej. Navidad, Mascotas" (keyup.enter)="buscar()" [(ngModel)]="busqueda">
+                <input (click)="prueba()" type="text" class="form-control barra" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="Buscar Imágenes: Ej. Navidad, Mascotas" (keyup.enter)="buscar()" [(ngModel)]="busqueda">
               </div>
-              <app-error></app-error>
-              <p class="recomendacion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque alias blanditiis nostrum mollitia eveniet accusamus pariatur illo perspiciatis nihil doloremque sequi vel ab iure, quia vero, eaque unde fugit voluptatem?</p>
+              <app-error class="error"></app-error>
+              <p class="recomendacion"> Imagenes Populares: fondos, paisajes, familia, animales, feliz año, naturaleza, espacio </p>
         </div>
       </div>
     </div>

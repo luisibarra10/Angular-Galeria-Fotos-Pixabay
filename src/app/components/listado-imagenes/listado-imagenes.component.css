@@ -12,3 +12,28 @@ a.page-link {
     border: 0 solid transparent;
     cursor: pointer;
 }
+
+.imgefecto {
+    
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .imgefecto:hover {
+  
+    transition: all 1s ease;
+  }
+
+  a.page-link:hover {
+    background-color: #077989 !important;
+    transition: all 1.5s ease;
+  }
+
+.card{
+    border: none;
+}
+
+div.mb-2{
+     padding-right: 5px; 
+     padding-left: 5px; 
+}

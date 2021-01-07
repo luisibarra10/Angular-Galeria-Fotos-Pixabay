@@ -18,8 +18,16 @@ busqueda: string;
 buscar(){
   if (this.busqueda === '') {
     this._imagenesServices.setError('Ooops! Ocurrio un error. Agrega un palabra de busqueda');
+    document.body.scrollTop = 150;
+    document.documentElement.scrollTop = 150;
     return ;
   }
   this._imagenesServices.enviarTerminoBusqueda(this.busqueda);
+  document.body.scrollTop = 370;
+ document.documentElement.scrollTop = 370;
+}
+
+prueba(){
+  console.log("DD");
 }
 }

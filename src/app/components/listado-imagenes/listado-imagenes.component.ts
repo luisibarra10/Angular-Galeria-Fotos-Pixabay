@@ -9,7 +9,7 @@ import { ImagenesService } from 'src/app/services/imagenes.service';
 })
 export class ListadoImagenesComponent implements OnInit {
   termino = '';
-  popular = "travel";
+  popular = "naturaleza";
   spinner = false;
   imagenesPorPagina = 30;
   paginaActual = 1;
@@ -35,10 +35,12 @@ export class ListadoImagenesComponent implements OnInit {
       this.mostrarSpinnerVacio();
       if (data.hits.length < 1) {
         this._imagenesService.setError('¡Vaya!, No se encontro ningun resultado. Intenta con otra busqueda');
+        document.body.scrollTop = 150;
+        document.documentElement.scrollTop = 150;
         return this.listadoImagenes = <any>[];
       }
       this.totalPaginas = Math.ceil(data.totalHits / this.imagenesPorPagina);
-      console.log(this.totalPaginas);
+      
 
       this.listadoImagenes = data.hits;
     },error =>{
@@ -63,10 +65,13 @@ export class ListadoImagenesComponent implements OnInit {
   }
 
   paginaAnterior(){
+    
     this.paginaActual --;
     this.spinner = true;
     this.listadoImagenes = [];
     this.getImagenes();
+    document.body.scrollTop = 370;
+ document.documentElement.scrollTop = 370;
   }
 
   paginaSiguiente(){
@@ -74,6 +79,8 @@ export class ListadoImagenesComponent implements OnInit {
     this.spinner = true;
     this.listadoImagenes = [];
     this.getImagenes();
+    document.body.scrollTop = 370;
+ document.documentElement.scrollTop = 370;
   }
 
 
