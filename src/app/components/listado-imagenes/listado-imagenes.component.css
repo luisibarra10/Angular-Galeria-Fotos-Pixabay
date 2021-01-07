@@ -1,4 +1,14 @@
 .contenido{
     margin: 20px 50px;
 }
-
+a.page-link {
+    position: relative;
+    display: block;
+    padding: .5rem .75rem;
+    margin-left: 0;
+    line-height: 1.25;
+    color: #fff;
+    background-color: #2BB9CE !important;
+    border: 0 solid transparent;
+    cursor: pointer;
+}

@@ -11,6 +11,7 @@ import { ListadoImagenesComponent } from './components/listado-imagenes/listado-
 import { ListadoImagenesPrincipalComponent } from './components/listado-imagenes-principal/listado-imagenes-principal.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ErrorComponent } from './components/error/error.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ErrorComponent } from './components/error/error.component';
     ListadoImagenesComponent,
     ListadoImagenesPrincipalComponent,
     FooterComponent,
-    ErrorComponent
+    ErrorComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,

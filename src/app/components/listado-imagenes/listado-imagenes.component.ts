@@ -9,14 +9,20 @@ import { ImagenesService } from 'src/app/services/imagenes.service';
 })
 export class ListadoImagenesComponent implements OnInit {
   termino = '';
-  popular = "popular";
+  popular = "travel";
+  spinner = false;
+  imagenesPorPagina = 30;
+  paginaActual = 1;
+  totalPaginas  = 0;
   suscription: Subscription
   listadoImagenes: any[] = [];
 
   constructor(private _imagenesService: ImagenesService) { 
     this.suscription = this._imagenesService.getTermino().subscribe(data =>{
+      this.mostrarSpinnerVacio();
       this.termino = data;
       this.getImagenes();
+      this.paginaActual = 1;
     })
   }
 
@@ -25,24 +31,50 @@ export class ListadoImagenesComponent implements OnInit {
   }
 
   getImagenes(){
-    this._imagenesService.getImagenes(this.termino).subscribe(data => {
-
+    this._imagenesService.getImagenes(this.termino, this.imagenesPorPagina, this.paginaActual).subscribe(data => {
+      this.mostrarSpinnerVacio();
       if (data.hits.length < 1) {
         this._imagenesService.setError('¡Vaya!, No se encontro ningun resultado. Intenta con otra busqueda');
-        return;
+        return this.listadoImagenes = <any>[];
       }
+      this.totalPaginas = Math.ceil(data.totalHits / this.imagenesPorPagina);
+      console.log(this.totalPaginas);
+
       this.listadoImagenes = data.hits;
     },error =>{
       this._imagenesService.setError('¡Oops! Ocurrio un error desde el Servidor ')
+      this.mostrarSpinnerVacio();
     })
   }
 
   getImagenesMain(){
-    this._imagenesService.getImagenes(this.popular).subscribe(data => {
-      console.log(this.popular);
+    this._imagenesService.getImagenes(this.popular, this.imagenesPorPagina, this.paginaActual).subscribe(data => {
+      this.totalPaginas = Math.ceil(data.totalHits / this.imagenesPorPagina);
       this.listadoImagenes = data.hits;
       return;
     })
   }
+
+  mostrarSpinnerVacio(){
+    this.spinner = true;
+    setTimeout(() => {
+      this.spinner = false;
+    }, 500);
+  }
+
+  paginaAnterior(){
+    this.paginaActual --;
+    this.spinner = true;
+    this.listadoImagenes = [];
+    this.getImagenes();
+  }
+
+  paginaSiguiente(){
+    this.paginaActual ++;
+    this.spinner = true;
+    this.listadoImagenes = [];
+    this.getImagenes();
+  }
+
 
 }
